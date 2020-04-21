@@ -1,4 +1,30 @@
 $(document).ready(function () {
+    // loading page
+    $(".jq-loading-logo").addClass("animated zoomIn").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+        $(".jq-loading-bg").fadeOut(2000).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+            // banner swiper
+            var mySwiper = new Swiper('.jq-swiper-container', {
+                // Optional parameters
+                direction: 'horizontal',
+                speed: 2000,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                },
+                // need pagination
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                // Navigation arrows
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            })
+        });
+    });
+    // menu drop-down
     $(".jq-dropdown").click(function (e) { 
         e.preventDefault();
         //menu 子項目開啟
@@ -8,6 +34,7 @@ $(document).ready(function () {
         $(this).parents("li").siblings("li").find(".dropdown").removeClass("active");
         $(this).parents("li").siblings("li").find(".dropdown-open").slideUp(300);
     });
+    //show animate
     $(window).scroll(function () { 
         if ($(window).scrollTop() > 32){
             $(".jq-header").addClass("sticky");
@@ -30,25 +57,6 @@ $(document).ready(function () {
             $(".jq-form-wrap").removeClass("show");
         }
     });
-    var mySwiper = new Swiper('.jq-swiper-container', {
-        // Optional parameters
-        direction: 'horizontal',
-        speed: 2000,
-        loop: true,
-        autoplay: {
-            delay: 3000,
-        },
-        // need pagination
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    })
     $(".jq-pic-box").on("click", function (e) {
         e.preventDefault();
         that = $(this)
@@ -57,7 +65,7 @@ $(document).ready(function () {
             that.parents(".wrap").siblings(".lightboxOverlay").fadeOut(500)
         });
     });
-    // 滑過intro-button，閃爍  
+    // intro-button滑過pulse效果
     $(".jq-intro-button").on("mouseover", function (e) {
         e.preventDefault();
         that = $(this)

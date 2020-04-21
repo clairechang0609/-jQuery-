@@ -49,6 +49,27 @@ table {
 html{
 	font-family: Roboto, 'Noto Sans TC';
 }
+.loading-bg{
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background: rgb(0,204,153);
+	z-index: 10000;
+}
+.loading-logo{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.loading-logo h4{
+	color: rgb(255,255,255);
+	font-size: 23px;
+	letter-spacing: 2px;
+	margin: 40px 0 0 20px;
+}
 .wrap{
 	width: 800px;
 	margin: 0 auto;
@@ -307,12 +328,6 @@ button:hover{
 	transition: 1s ease-in-out;
 }
 /* show it */
-.jq-intro{
-	opacity: 0;
-}
-.jq-intro.show{
-	opacity: 1;
-}
 .intro h4{
 	color: rgb(50,50,50);
 	font-size: 22px;
