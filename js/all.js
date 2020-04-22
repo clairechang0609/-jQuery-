@@ -57,12 +57,21 @@ $(document).ready(function () {
             $(".jq-form-wrap").removeClass("show");
         }
     });
+    //點擊圖片放大後，增加縮小鏡
     $(".jq-pic-box").on("click", function (e) {
         e.preventDefault();
         that = $(this)
         $(this).parents(".wrap").siblings(".lightbox").find(".lb-nav").addClass("active").on("click", function (e) {
             that.parents(".wrap").siblings(".lightbox").fadeOut(500)
             that.parents(".wrap").siblings(".lightboxOverlay").fadeOut(500)
+        });
+    });
+    // 圖片滑過pulse效果
+    $(".jq-pic-box img").on("mouseover", function (e) {
+        e.preventDefault();
+        that = $(this)
+        $(this).addClass("animated pulse").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+            that.removeClass('animated pulse');
         });
     });
     // intro-button滑過pulse效果
