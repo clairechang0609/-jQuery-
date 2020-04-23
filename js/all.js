@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // loading page
     $(".jq-loading-logo").addClass("animated zoomIn").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-        $(".jq-loading-bg").fadeOut(2000).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+        $(".jq-loading-bg").fadeOut(700).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
             // banner swiper
             var mySwiper = new Swiper('.jq-swiper-container', {
                 // Optional parameters

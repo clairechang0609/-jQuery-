@@ -70,6 +70,9 @@ html{
 	letter-spacing: 2px;
 	margin: 40px 0 0 20px;
 }
+.animated.zoomIn{
+	animation-duration: 2s;
+}
 .wrap{
 	width: 800px;
 	margin: 0 auto;
