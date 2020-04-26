@@ -581,7 +581,7 @@ button:hover{
 .form-wrap{
 	background: linear-gradient(rgb(0,101,75), rgb(0,143,107));
 	border-radius: 2px;
-	padding: 25px 20px 30px 20px;
+	padding: 25px 25px 30px 25px;
 	margin-bottom: 50px;
 	transition: 1s ease-in-out;
 }
@@ -623,8 +623,10 @@ button:hover{
 }
 .form-wrap form textarea{
 	width: 370px;
+	margin-right: 10px;
 }
 .form-wrap form div{
+	width: 360px;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -637,13 +639,14 @@ button:hover{
 	-webkit-align-items: flex-start;
 	-ms-align-items: flex-start;
 	align-items: flex-start;
+	padding-left: 10px;
 }
 .form-wrap form label{
     font-size: 13px;
     color: rgb(255,255,255);
 }
 .form-wrap form input{
-	width: 360px;
+	width: 100%;
     margin: 6px 0 12px 0;
 } 
 .form-wrap form input::placeholder{
@@ -690,8 +693,11 @@ button:hover{
 		height: 150px;
 		margin-bottom: 20px;
 	}
-	.form-wrap form input{
+	.form-wrap form div{
 		width: 100%;
+		padding-left: 0;
+	}
+	.form-wrap form input{
 		margin-bottom: 15px;
 	}
 }
