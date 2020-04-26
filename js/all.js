@@ -41,11 +41,6 @@ $(document).ready(function () {
         } else {
             $(".jq-header").removeClass("sticky");
         }
-        if ($(window).scrollTop() > 100) {
-            $(".jq-intro").addClass("show");
-        } else if ($(window).scrollTop() < 0){
-            $(".jq-intro").removeClass("show");
-        }
         if ($(window).scrollTop() > 350) {
             $(".jq-table-wrap").addClass("show");
         } else {

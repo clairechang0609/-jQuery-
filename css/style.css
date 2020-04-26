@@ -48,6 +48,12 @@ table {
 }
 html{
 	font-family: Roboto, 'Noto Sans TC';
+	font-size: 10px;
+}
+@media(max-width:767px){
+	html{
+		font-size: 8px;
+	}
 }
 .loading-bg{
 	position: fixed;
@@ -64,6 +70,11 @@ html{
 	flex-direction: column;
 	align-items: center;
 }
+@media(max-width:767px){
+	.loading-logo img{
+		max-width: 90%;
+	}
+}
 .loading-logo h4{
 	color: rgb(255,255,255);
 	font-size: 23px;
@@ -74,7 +85,7 @@ html{
 	animation-duration: 2s;
 }
 .wrap{
-	width: 800px;
+	max-width: 800px;
 	margin: 0 auto;
 }
 a:hover,
@@ -132,7 +143,7 @@ button:hover{
 
 /* header_logo and menu */
 .header{
-	width: 800px;
+	max-width: 800px;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
@@ -262,11 +273,31 @@ button:hover{
 	border-radius: 0 0 3px 3px;
 	z-index: 999;
 }
+@media(max-width:767px){
+	.header{
+		flex-direction: column;
+		align-items: center;
+	}
+	.header h2{
+		padding: 10px 0;
+	}
+	.header .menu{
+		padding: 0;
+	}
+	.header .menu > li{
+		margin: 0 5px;
+	}
+	.header .menu > li a{
+		margin-bottom: 3px;
+	}
+	.header.sticky{
+		width: 100%;
+	}
+}
 
 /* 輪播banner */
 .swiper-container{
 	width: 800px;
-	height: 325px;
 	margin-bottom: 50px; 
 }
 .swiper-wrapper{
@@ -280,24 +311,25 @@ button:hover{
 	color: rgb(255,255,255);
 	top: 50%;
 	transform: translateY(-50%);
-	font-size: 40px;
+	font-size: 4rem;
 	line-height: 1.1;
 	letter-spacing: 0px;
 	padding-left: 70px;
 }
 .swiper-slide h3 span{
-	font-size: 25px;
+	font-size: 2.5rem;
 	color: rgb(0,204,153);
 }
 .swiper-slide::before{
 	content: '';
 	position: absolute;
 	width: 100%;
-	height: 160px;
+	height: 50%;
 	top: 50%;
 	transform: translateY(-50%);
 	background: rgba(0,0,0, 0.35);
 }
+
 .swiper-container .swiper-button-prev,
 .swiper-container .swiper-button-next{
 	color: rgb(255,255,255);
@@ -323,6 +355,14 @@ button:hover{
 	opacity: 1;
 	background: rgb(0,204,153);
 }
+@media(max-width:767px){
+	.swiper-container{
+		width: 100%;
+	}
+	.swiper-container img{
+		width: 100%;
+	}
+}
 
 /* intro-card 圖片可放大 */
 .intro{
@@ -338,23 +378,6 @@ button:hover{
 	margin-bottom: 25px;
 	text-align: center;
 }
-.intro .intro-button{
-	position: absolute;
-	top: -3px;
-	right: 0;
-	font-size: 13px;
-    padding: 7px 15px;
-    background: rgb(0,204,153);
-    color: rgb(255,255,255);
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-}
-.intro .intro-button:hover{
-	background: rgb(20,184,133);
-	cursor: pointer;
-}
 .intro > ul{
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -366,6 +389,7 @@ button:hover{
 	justify-content: space-between;
 }
 .intro .card{
+	width: 32%;
 	position: relative;
 	background: rgb(255,255,255);
 	color: rgb(50,50,50);
@@ -377,7 +401,6 @@ button:hover{
 	transition: 0.3s ease-in-out;
 }
 .intro .card div{
-	width: 253px;
 	padding: 10px 20px 25px;
 }
 .intro .card::before{
@@ -458,6 +481,42 @@ button:hover{
 .lb-nav.active:hover{
 	cursor: zoom-out;
 }
+.intro .intro-button{
+	position: absolute;
+	top: -3px;
+	right: 0;
+	font-size: 13px;
+    padding: 7px 15px;
+    background: rgb(0,204,153);
+    color: rgb(255,255,255);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+}
+.intro .intro-button:hover{
+	background: rgb(20,184,133);
+	cursor: pointer;
+}
+@media(max-width:767px){
+	.intro{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.intro > ul{
+		flex-direction: column;
+		align-items: center;
+	}
+	.intro .card{
+		width: 270px;
+		margin-bottom: 15px;
+	}
+	.intro .intro-button{
+		position: relative;
+		margin-top: 10px;
+	}
+}
 
 /* table */
 .table-wrap{
@@ -511,6 +570,11 @@ button:hover{
 }
 .table-wrap .win{
 	color: rgb(0,204,153);
+}
+@media(max-width:767px){
+	.table-wrap{
+		padding: 0 20px;
+	}
 }
 
 /* 留下資料 */
@@ -613,6 +677,24 @@ button:hover{
 	outline: 0;
     border-color: transparent;
 }
+@media(max-width:767px){
+	.form-wrap{
+		margin: 0 20px 40px;
+	}
+	.form-wrap form{
+		flex-direction: column;
+		padding: 0 40px;
+	}
+	.form-wrap form textarea{
+		width: 100%;
+		height: 150px;
+		margin-bottom: 20px;
+	}
+	.form-wrap form input{
+		width: 100%;
+		margin-bottom: 15px;
+	}
+}
 
 /* footer */
 .footer{
@@ -643,6 +725,18 @@ button:hover{
 }
 .footer .footer-content li a:hover{
 	color: rgb(0,143,107);
+}
+@media(max-width:767px){
+	.footer{
+		justify-content: center;
+		padding: 0px 20px 30px;
+	}
+	.footer .footer-logo{
+		display: none;
+	}
+	.footer .footer-content{
+		text-align: center;
+	}
 }
 
 /* go-top button */
