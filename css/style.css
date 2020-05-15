@@ -275,6 +275,11 @@ button:hover{
 	border-radius: 0 0 3px 3px;
 	z-index: 999;
 }
+@media(max-width:800px){  /* menu寬度隨螢幕寬度縮放 */
+	.header.sticky{
+		width: 100%;
+	}
+}
 @media(max-width:768px){
 	.header{
 		flex-direction: column;
@@ -291,9 +296,6 @@ button:hover{
 	}
 	.header .menu > li a{
 		margin-bottom: 3px;
-	}
-	.header.sticky{
-		width: 100%;
 	}
 }
 @media(max-width:568px){
@@ -571,15 +573,6 @@ button:hover{
 	margin: 0 auto 50px;
 	transition: 1s ease-in-out;
 }
-/* show it */
-.jq-table-wrap{
-	opacity: 0;
-	width: 80%;
-}
-.jq-table-wrap.show{
-	opacity: 1;
-	width: 100%;
-}
 .table-wrap h4{
 	color: rgb(50,50,50);
 	font-size: 20px;
@@ -635,12 +628,6 @@ button:hover{
 	transition: 1s ease-in-out;
 }
 /* show it */
-.jq-form-wrap{
-	opacity: 0;
-}
-.jq-form-wrap.show{
-	opacity: 1;
-}
 .form-wrap .form-title{
 	padding-bottom: 25px;
 	color: rgb(255,255,255);
@@ -796,6 +783,17 @@ button:hover{
 	.footer .footer-content{
 		text-align: center;
 	}
+}
+
+/* animated show class */
+.animate{
+	opacity: 0;
+	transform: translateY(70px);
+	transition: 1.5s ease-in-out;
+}
+.show{
+	opacity: 1;
+	transform: translateY(0);
 }
 
 /* go-top button */

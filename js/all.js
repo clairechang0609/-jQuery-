@@ -41,16 +41,13 @@ $(document).ready(function () {
         } else {
             $(".jq-header").removeClass("sticky");
         }
-        if ($(window).scrollTop() > 350) {
-            $(".jq-table-wrap").addClass("show");
-        } else {
-            $(".jq-table-wrap").removeClass("show");
-        }
-        if ($(window).scrollTop() > 650) {
-            $(".jq-form-wrap").addClass("show");
-        } else {
-            $(".jq-form-wrap").removeClass("show");
-        }
+        $(".animate").each(function () {
+            var top_of_object = $(this).offset().top;
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            if (bottom_of_window > top_of_object){
+                $(this).addClass("show");
+            }
+        })
     });
     //點擊圖片放大後，增加縮小鏡
     $(".jq-pic-box").on("click", function (e) {
